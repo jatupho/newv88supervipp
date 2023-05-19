@@ -1,69 +1,61 @@
-้้<!DOCTYPE html>
-<html lang="en">
-<head>
-    
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iship</title>
-    <style>
-      th{
-        background-color:#97e1ff;
-      }
-      
-    /* .table-container{
-      background-image: url("/images/pt1.png");
-    background-size: cover;
-    } */
-   .container {
-    /* background-image: url("/images/333.jpg");
-    background-size: cover; */
-    /* สามารถกำหนดคุณสมบัติเพิ่มเติมของพื้นหลังได้ตามต้องการ */
+@extends('layouts.app')
+
+@section('styles')
+<style>
+  th{
+    background-color:#97e1ff;
   }
-    .myButton {
-	box-shadow: 3px 4px 0px 0px #899599;
-	background:linear-gradient(to bottom, #27bff2 5%, #bdd7f2 100%);
-	background-color:#27bff2;
-	border-radius:15px;
-	border:1px solid #d6bcd6;
-	display:inline-block;
-	cursor:pointer;
-	color:#000000;
-	font-family:Arial;
-	font-size:17px;
-	padding:7px 25px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #e1e2ed;
-  margin-right: 120px; /* กำหนดระยะห่างด้านขวาของ element */
-    /* กำหนดระยะห่างภายใน element */
+  
+/* .table-container{
+  background-image: url("/images/pt1.png");
+background-size: cover;
+} */
+.container {
+/* background-image: url("/images/333.jpg");
+background-size: cover; */
+/* สามารถกำหนดคุณสมบัติเพิ่มเติมของพื้นหลังได้ตามต้องการ */
+}
+.myButton {
+box-shadow: 3px 4px 0px 0px #899599;
+background:linear-gradient(to bottom, #27bff2 5%, #bdd7f2 100%);
+background-color:#27bff2;
+border-radius:15px;
+border:1px solid #d6bcd6;
+display:inline-block;
+cursor:pointer;
+color:#000000;
+font-family:Arial;
+font-size:17px;
+padding:7px 25px;
+text-decoration:none;
+text-shadow:0px 1px 0px #e1e2ed;
+margin-right: 120px; /* กำหนดระยะห่างด้านขวาของ element */
+/* กำหนดระยะห่างภายใน element */
 }
 .myButton:hover {
-	background:linear-gradient(to bottom, #bdd7f2 5%, #27bff2 100%);
-	background-color:#bdd7f2;
+background:linear-gradient(to bottom, #bdd7f2 5%, #27bff2 100%);
+background-color:#bdd7f2;
 }
 .myButton:active {
-	position:relative;
-	top:1px;
+position:relative;
+top:1px;
 }
 .table-container {
-        width: 80%; /* กำหนดความกว้างของตารางให้เท่ากับ 80% ของขนาดหน้าจอ */
-        margin: 0 auto; /* จัดตารางกึ่งกลางในหน้าจอ */
-    }
+    width: 80%; /* กำหนดความกว้างของตารางให้เท่ากับ 80% ของขนาดหน้าจอ */
+    margin: 0 auto; /* จัดตารางกึ่งกลางในหน้าจอ */
+}
 
-    .myTable {
-        width: 100%; /* กำหนดขนาดตารางให้เต็มขนาดคอนเทนเนอร์ */
-    }
-  </style>
-</head>
-<body>
+.myTable {
+    width: 100%; /* กำหนดขนาดตารางให้เต็มขนาดคอนเทนเนอร์ */
+}
+</style>
+@endsection
 
-@extends('layouts.app')
 @section('title', 'เพิ่มuserพนักงาน')
+
 @section('content')
+
 <div class="container">
-<div class="container">
-  <img src="/images/erp.png" style="width: 140px; height: 140px; margin-bottom: 20px;">
-</div>
  <form id="search-form">
     <div class="row">
       <div class="col-md-6">
@@ -81,10 +73,10 @@
         <div class="form-group">
           <label for="search-c">ค้นหา:</label>
           <input type="text" class="form-control" id="search-c" name="search-c" placeholder="ค้นหา..." list="location-options">
-<datalist id="location-options">
-  <option value="iship1_สาขาสายไหม"name="column"></option>
-  <option value="iship2_สาขาประเวศ"name="column"></option>
-</datalist>
+            <datalist id="location-options">
+              <option value="iship1_สาขาสายไหม"name="column"></option>
+              <option value="iship2_สาขาประเวศ"name="column"></option>
+            </datalist>
         </div>
       </div>
     </div>
@@ -193,6 +185,3 @@ fetch(fetchUrl)
 </script>
 
 @endsection
-
-</body>
-</html>

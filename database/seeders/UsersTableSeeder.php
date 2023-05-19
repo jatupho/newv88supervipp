@@ -14,9 +14,24 @@ class UsersTableSeeder extends Seeder
     public function run(): void
     {
         DB::table('users')->insert([
-            'name' => 'limxisasd',
-            'email' => 'limxisss@gmail.com',
-            'password' => Hash::make('123456')
+            [
+                'name' => 'admin',
+                'position' => 'ฝ่ายบุคคล',
+                'role' => 'admin',
+                'email' => 'admin@iship.co.th',
+                'password' => bcrypt('123456'),
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'name' => 'Sarawut Inree',
+                'position' => 'พนักงานทั่วไป',
+                'role' => 'user',
+                'email' => 'sarawut.inree@gmail.com',
+                'password' => bcrypt('11261992'),
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
         ]);
     }
 }

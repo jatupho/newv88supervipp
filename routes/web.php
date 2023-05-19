@@ -22,7 +22,7 @@ Route::get('/create', function () {
     return view('create');
 })->name('users.create');
 //เว็บดูข้อมูลCHECK_IN CHECK_OUT
-Route::get('/search', [CheckController::class, 'index']);
+Route::middleware(['auth'])->get('/search', [CheckController::class, 'index']);
 
 // Route::get('/search', [CheckController::class, 'searchx']);
 
@@ -34,5 +34,10 @@ Route::get('/location/{location}', [CheckController::class, 'searchlocation'])->
 
 
 // Route::get('/checks/column/{columnName}',[CheckController::class, 'search'])->name('search.check');
+Auth::routes();
 
-require __DIR__.'/api.php';
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+//new version
+
+Route::get('/history',[\App\Http\Controllers\CheckTimeController::class, 'history']);

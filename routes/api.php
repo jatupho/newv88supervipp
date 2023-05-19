@@ -48,3 +48,9 @@ Route::get('/checks/{user_id}',[CheckController::class, 'tabel']);
 //test
 Route::get('/status', [UserController::class, 'userOnlineStatus']);
 Route::get('/users/{user_id}/checks',[CheckController::class, 'tabelx']);
+
+Route::prefix('v2')->middleware('auth:sanctum')->group(function ()
+{
+    Route::post('/check-time', [App\Http\Controllers\Api\V2\CheckTimeController::class, 'stampTime'])->name('check-time');
+    Route::get('/history', [App\Http\Controllers\Api\V2\CheckTimeController::class, 'history'])->name('history');
+});
